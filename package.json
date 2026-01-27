@@ -1,0 +1,18 @@
+{
+  "name": "astro-id-minifier",
+  "version": "0.0.1",
+  "description": "Simple plugin for minifying Astro id",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alex-1701/astro-id-minifier"
+  },
+  "license": "WTFPL",
+  "author": "Alex-1701 <alex17koleda@gmail.com>",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "cd test && npm run build"
+  },
+  "dependencies": {
+    "tinyglobby": "0.2.15"
+  }
+}
