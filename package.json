@@ -4,7 +4,7 @@
   "description": "Simple plugin for minifying Astro id",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Alex-1701/astro-id-minifier"
+    "url": "git+https://github.com/Alex-1701/astro-id-minifier.git"
   },
   "license": "WTFPL",
   "author": "Alex-1701 <alex17koleda@gmail.com>",
