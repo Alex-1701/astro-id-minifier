@@ -9,10 +9,20 @@
   "license": "WTFPL",
   "author": "Alex-1701 <alex17koleda@gmail.com>",
   "main": "src/index.js",
+  "files": [
+    "src"
+  ],
   "scripts": {
+    "format": "prettier . -w",
     "test": "cd test && npm run build"
   },
   "dependencies": {
     "tinyglobby": "0.2.15"
+  },
+  "devDependencies": {
+    "astro": "5.16.15",
+    "prettier": "3.8.1",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-astro-organize-imports": "0.4.11"
   }
 }
