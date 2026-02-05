@@ -4,7 +4,7 @@ import minifyId from "astro-id-minifier";
 import distAnalyzer from "dist-analyzer";
 
 export default defineConfig({
-  integrations: [distAnalyzer(), minifyId({ mode: "maximum" }), distAnalyzer()],
+  integrations: [distAnalyzer(), minifyId(), distAnalyzer()],
   build: {
     inlineStylesheets: "never",
   },
