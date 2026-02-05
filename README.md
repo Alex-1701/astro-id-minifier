@@ -53,7 +53,11 @@ export default defineConfig({
 
 # Example
 
-Let's check how it works!
+Let's check how `prefix` mode works for example project in `test` folder.
+
+```sh
+npm run test
+```
 
 Before minification:
 
@@ -75,4 +79,4 @@ After minification:
 | ICO  |      1 |   655 |    655 B |
 | ...  |     15 | 20538 | 20.54 kB |
 
-5.7 kB out of 26.27 kB saved!
+5.7 kB out of 26.27 kB saved. More then 20%!
