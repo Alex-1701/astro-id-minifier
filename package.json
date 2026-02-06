@@ -1,7 +1,13 @@
 {
   "name": "astro-id-minifier",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple plugin for minifying Astro id",
+  "keywords": [
+    "astro",
+    "astro-integration",
+    "performance",
+    "optimization"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Alex-1701/astro-id-minifier.git"
