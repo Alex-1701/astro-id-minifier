@@ -2,9 +2,10 @@
 import { defineConfig } from "astro/config";
 import minifyId from "astro-id-minifier";
 import distAnalyzer from "dist-analyzer";
+import compressor from "astro-compressor";
 
 export default defineConfig({
-  integrations: [distAnalyzer(), minifyId(), distAnalyzer()],
+  integrations: [minifyId(), compressor(), distAnalyzer()],
   build: {
     inlineStylesheets: "never",
   },

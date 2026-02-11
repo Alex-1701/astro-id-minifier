@@ -12,6 +12,7 @@
     "astro": "5.16.15"
   },
   "devDependencies": {
+    "astro-compressor": "1.1.0",
     "astro-id-minifier": "file:..",
     "dist-analyzer": "github:Alex-1701/dist-analyzer"
   },

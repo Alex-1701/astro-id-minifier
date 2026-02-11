@@ -80,3 +80,65 @@ After minification:
 | ...  |     15 | 20538 | 20.54 kB |
 
 5.7 kB out of 26.27 kB saved. More then 20%!
+
+# Example with gzip, brotli and zstd
+
+Looks like this minification works even with binary compression. Let's modify `/test/astro.config.mjs` to add compressor.
+
+```js
+// @ts-check
+import { defineConfig } from "astro/config";
+import minifyId from "astro-id-minifier";
+import distAnalyzer from "dist-analyzer";
+import compressor from "astro-compressor";
+
+export default defineConfig({
+  integrations: [compressor(), distAnalyzer()],
+  build: {
+    inlineStylesheets: "never",
+  },
+});
+```
+
+Result in console
+
+| type | amount |  size |   size\* |
+| :--- | -----: | ----: | -------: |
+| HTML |      5 | 17753 | 17.75 kB |
+| ZST  |     14 |  8886 |  8.89 kB |
+| GZ   |     14 |  8586 |  8.59 kB |
+| CSS  |      8 |  7110 |  7.11 kB |
+| BR   |     14 |  6423 |  6.42 kB |
+| SVG  |      1 |   749 |    749 B |
+| ICO  |      1 |   655 |    655 B |
+| ...  |     57 | 50162 | 50.16 kB |
+
+Now let's add minifyId in integration pipeline and check result in console.
+
+```js
+// @ts-check
+import { defineConfig } from "astro/config";
+import minifyId from "astro-id-minifier";
+import distAnalyzer from "dist-analyzer";
+import compressor from "astro-compressor";
+
+export default defineConfig({
+  integrations: [minifyId(), compressor(), distAnalyzer()],
+  build: {
+    inlineStylesheets: "never",
+  },
+});
+```
+
+All 3 compress formats show redusing size
+
+| type | amount |  size |   size\* |
+| :--- | -----: | ----: | -------: |
+| HTML |      5 | 13656 | 13.66 kB |
+| ZST  |     14 |  8478 |  8.48 kB |
+| GZ   |     14 |  8174 |  8.17 kB |
+| BR   |     14 |  5992 |  5.99 kB |
+| CSS  |      8 |  5478 |  5.48 kB |
+| SVG  |      1 |   749 |    749 B |
+| ICO  |      1 |   655 |    655 B |
+| ...  |     57 | 43182 | 43.18 kB |
