@@ -2,7 +2,7 @@ import type { AstroIntegration } from "astro";
 
 interface Config {
   excludedNames?: string[];
-  mode?: "prefix" | "maximum";
+  mode?: "prefix" | "maximum" | "conservative";
 }
 
 export default function (config?: Config): AstroIntegration;

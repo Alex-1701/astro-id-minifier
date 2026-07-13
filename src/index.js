@@ -26,6 +26,13 @@ const getAllIds = async (files) => {
 export const minifyIds = (ids, excludedNames, mode) => {
   const minified = new Map();
 
+  if (mode === "conservative") {
+    for (let i = 0; i < ids.length; i++) {
+      minified.set(ids[i].value, ids[i].value.replaceAll("-astro-cid-", "-"));
+    }
+    return minified;
+  }
+
   if (mode === "prefix") {
     let counter = 0;
     for (let i = 0; i < ids.length; i++) {
