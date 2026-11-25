@@ -9,20 +9,21 @@ Astro uses custom data attributes for matching styles with elements. It consist 
 
 You can choose from two possible options of minification:
 
-1. `prefix` mode - Produces valid data attributes with base 36 number as uid. In best cases 6 symbols length (`data-0` ... `data-z`)
-2. `maximum` mode - Uses base 36 number as attribute. W3C validator will be unhappy because of non standard attribute names. In best cases 1 symbol length (`a`... `z`)
+1. `prefix` mode - Produces valid data attributes with radix 36 number as uid. In best cases 6 symbols length (`data-0` ... `data-z`)
+2. `maximum` mode - Uses radix 36 number as attribute. W3C validator will be unhappy because of non standard attribute names. In best cases 1 symbol length (`a`... `z`)
+3. `conservative` mode - Uses Astro uid, just removing `astro-cid` substring. It should help with correct CSS cashing.
 
 Replacement example:
 
-| original                  | `prefix` mode | `maximum` mode |
-| :------------------------ | :------------ | :------------- |
-| `data-astro-cid-a19vuypl` | `data-0`      | `a`            |
-| `data-astro-cid-c6n81xn6` | `data-1`      | `b`            |
-| `data-astro-cid-2il9dovh` | `data-2`      | `c`            |
-| ...                       | ...           | ...            |
-| `data-astro-cid-awafihhf` | `data-1b`     | `al`           |
-| `data-astro-cid-7bzp6f8c` | `data-1c`     | `am`           |
-| `data-astro-cid-6l5jns9d` | `data-1d`     | `an`           |
+| original                  | `conservative` mode | `prefix` mode | `maximum` mode |
+| :------------------------ | ------------------- | :------------ | :------------- |
+| `data-astro-cid-a19vuypl` | `data-a19vuypl`     | `data-0`      | `a`            |
+| `data-astro-cid-c6n81xn6` | `data-c6n81xn6`     | `data-1`      | `b`            |
+| `data-astro-cid-2il9dovh` | `data-2il9dovh`     | `data-2`      | `c`            |
+| ...                       | ...                 | ...           | ...            |
+| `data-astro-cid-awafihhf` | `data-awafihhf`     | `data-1b`     | `al`           |
+| `data-astro-cid-7bzp6f8c` | `data-7bzp6f8c`     | `data-1c`     | `am`           |
+| `data-astro-cid-6l5jns9d` | `data-6l5jns9d`     | `data-1d`     | `an`           |
 
 # Installation
 

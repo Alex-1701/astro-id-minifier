@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "astro-id-minifier": "file:..",
-    "dist-analyzer": "github:Alex-1701/dist-analyzer"
+    "dist-analyzer": "github:Alex-1701/dist-analyzer#0.0.2"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-musl": "4.56.0",

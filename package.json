@@ -1,6 +1,6 @@
 {
   "name": "astro-id-minifier",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple plugin for minifying Astro id",
   "keywords": [
     "astro",
@@ -19,7 +19,7 @@
     "src"
   ],
   "scripts": {
-    "format": "prettier . -w",
+    "fmt": "prettier . -w",
     "test": "cd test && npm run build"
   },
   "dependencies": {
